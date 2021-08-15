@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Cat, Apple
 
-# Register your models here.
+# Register to admin site
+admin.site.register(Cat)
+admin.site.register(Apple)
