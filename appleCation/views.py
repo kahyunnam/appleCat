@@ -38,7 +38,7 @@ for logging in
 '''
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def login_access(request):
 
     catUserName = request.data.get("userName")
