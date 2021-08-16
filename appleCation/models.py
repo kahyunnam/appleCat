@@ -6,9 +6,12 @@ define a simple user.
 '''
 
 class Cat(models.Model):
+  #login
   userName = models.CharField(max_length=20, unique=True)
   userPassword = models.CharField(max_length=20)
-  accessKey = models.CharField(max_length=16)
+
+  #page access: assigned random string
+  accessKey = models.CharField(max_length=200, default="c")
 
   def __str__(self):
     return self.userName
@@ -19,6 +22,9 @@ class Cat(models.Model):
 a job application.
 '''
 class Apple(models.Model):
+  #many-to-one Apple:Cat
+  cat = models.ForeignKey(Cat, on_delete=models.CASCADE, default=1)
+
   #basic info
   company = models.CharField(max_length=200)
   jobTitle = models.CharField(max_length=200)
