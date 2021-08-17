@@ -1,7 +1,7 @@
 # This is the Django API for appleCat
 
-## API endpoints documentation:
-### create account 
+# API endpoints documentation:
+## create account 
 POST request to "/CreateCat" with the following data body: 
 ```
 {
@@ -26,7 +26,7 @@ if NOT valid, API will return the response:
 }
 ```
 
-### log in 
+## log in 
 POST request to "/Login" with the following data body:
 ```
 {
