@@ -26,11 +26,16 @@ def create_account(request):
         new_cat = Cat.objects.get(accessKey="NEWCAT")
         new_cat.accessKey = str(uuid.uuid1())
         new_cat.save()
-        new_seriCat = CatSerializer(new_cat)
+        new_seriCat = SecretCatSerializer(new_cat)
 
         return Response(new_seriCat.data, status=status.HTTP_201_CREATED)
 
-    return Response(seriCat.errors, status=status.HTTP_400_BAD_REQUEST)
+    fail = {
+        "userName": "notvalid",
+        "userPassword": "notvalid",
+        "accessKey": "notvalid"
+    }
+    return JsonResponse(fail)
 
 
 '''
