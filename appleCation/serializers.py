@@ -14,27 +14,27 @@ class CatSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('userName', 'userPassword')
 
 
-class AppleSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Apple
-        fields = (
-            'cat',
-            'company',
-            'jobTitle',
-            'location',
-            'submittedDate',
-            'description',
-            'notes',
-            'statusCheck',
-            'OAStatusChoices',
-            'OAstatus',
-            'OAdue',
-            'OAlink',
-            'OAThoughtsChoices',
-            'OAthoughts',
-            'pending',
-            'rejected',
-            'accepted',
-            'interviewInvite',
-            'interviewDate'
-        )
+# class AppleSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Apple
+#         fields = (
+#             'cat',
+#             'company',
+#             'jobTitle',
+#             'location',
+#             'submittedDate',
+#             'description',
+#             'notes',
+#             'statusCheck',
+#             'OAStatusChoices',
+#             'OAstatus',
+#             'OAdue',
+#             'OAlink',
+#             'OAThoughtsChoices',
+#             'OAthoughts',
+#             'pending',
+#             'rejected',
+#             'accepted',
+#             'interviewInvite',
+#             'interviewDate'
+#         )
