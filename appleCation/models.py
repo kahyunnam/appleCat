@@ -12,7 +12,7 @@ class Cat(models.Model):
     userPassword = models.CharField(max_length=20)
 
     # page access: assigned random string
-    accessKey = models.CharField(max_length=200, default="NEWCAT")
+    accessKey = models.CharField(max_length=200, default="NEWCAT", unique=True)
 
     def __str__(self):
         return self.userName
@@ -25,7 +25,8 @@ a job application = Apple
 
 class Apple(models.Model):
     # many-to-one Apple:Cat
-    cat = models.ForeignKey(Cat, on_delete=models.CASCADE, default=1)
+    cat = models.ForeignKey(Cat, to_field="accessKey",
+                            on_delete=models.CASCADE)
 
     # basic info
     company = models.CharField(max_length=200)
